@@ -1,14 +1,22 @@
-objects = main.o
-files = main.cpp functions.h makefile
+objects = main.o functions.o
+files = main.cpp functions.h functions.cpp makefile template_class.h template_class.cpp
 CC = g++
-CFLAGS = -g -Wall
+FLAGS = -g -Wall
 
-main: $(objects)
-	$(CC) $(objects) -o main $(CFFLAGS)
+all: test
+
+test: $(objects) 
+	$(CC) $(objects) $(FLAGS) -o test
 	@echo make done
 
+main.o: main.cpp template_class.h template_class.cpp
+	$(CC) $(FLAGS) -c main.cpp
+
+functions.o: functions.cpp functions.h
+	$(CC) $(FLAGS) -c functions.cpp
+
 clean:
-	del main.exe $(objects)
+	del test.exe $(objects)
 	@echo clean done
 
 upload:
