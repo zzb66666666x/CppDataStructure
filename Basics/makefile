@@ -9,3 +9,8 @@ main: $(objects)
 clean:
 	del main.exe, main.o
 	@echo clean done
+
+upload:
+	git add --all
+	git commit -m"updated"
+	git push -u origin master
