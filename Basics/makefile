@@ -1,4 +1,5 @@
 objects = main.o
+files = main.cpp functions.h makefile
 CC = g++
 CFLAGS = -g -Wall
 
@@ -7,10 +8,10 @@ main: $(objects)
 	@echo make done
 
 clean:
-	del main.exe, main.o
+	del main.exe $(objects)
 	@echo clean done
 
 upload:
-	git add --all
+	git add $(files)
 	git commit -m"updated"
 	git push -u origin master
