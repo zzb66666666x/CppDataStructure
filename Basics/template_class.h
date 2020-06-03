@@ -1,8 +1,7 @@
 // the testing file of using template class 
 #ifndef TEMPLATE_CLASS_H
 #define TEMPLATE_CLASS_H
-#include<iostream>
-using namespace std;
+
 
 template <class T>
 class myComplex{
