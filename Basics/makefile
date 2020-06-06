@@ -1,5 +1,6 @@
 objects = main.o functions.o
-files = main.cpp functions.h functions.cpp makefile template_class.h template_class.cpp
+files = main.cpp functions.h functions.cpp makefile template_class.h template_class.cpp\
+		array2d.h array2d.cpp
 CC = g++
 FLAGS = -g -Wall
 
@@ -9,7 +10,7 @@ test: $(objects)
 	$(CC) $(objects) $(FLAGS) -o test
 	@echo make done
 
-main.o: main.cpp template_class.h template_class.cpp
+main.o: main.cpp template_class.h template_class.cpp array2d.h array2d.cpp
 	$(CC) $(FLAGS) -c main.cpp
 
 functions.o: functions.cpp functions.h

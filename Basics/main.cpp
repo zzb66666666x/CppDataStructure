@@ -1,6 +1,7 @@
 #include<iostream>
 #include"functions.cpp"
 #include"template_class.h"
+#include"array2d.h"
 
 using namespace std;
 
@@ -21,5 +22,17 @@ int main(){
     myComplex<float> value2(3.3, 4.4);
     myComplex<float> value3 = value1 + value2;
     value3.show();
+
+    //memory allocation
+    //using a 2d array
+    double ** x;
+    int rows = 3;
+    int columns = 5;
+    makeArray(x, rows, columns);
+    init(x, rows, columns);
+    x[2][3] = 6;
+    show(x, rows, columns);
+    deleteArray(x, rows);
+
     return 0;
 }
