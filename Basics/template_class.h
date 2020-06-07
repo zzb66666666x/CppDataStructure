@@ -31,6 +31,4 @@ public:
     T getmax ();
 };
 
-#include"template_class.cpp"
-
 #endif

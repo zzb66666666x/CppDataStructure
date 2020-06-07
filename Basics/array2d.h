@@ -16,6 +16,4 @@ void init(T** &x, int rows, int columns);
 template<class T>
 void show(T** &x, int rows, int columns);
 
-#include"array2d.cpp"
-
 #endif

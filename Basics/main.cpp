@@ -1,7 +1,7 @@
 #include<iostream>
 #include"functions.cpp"
-#include"template_class.h"
-#include"array2d.h"
+#include"template_class.cpp"
+#include"array2d.cpp"
 
 using namespace std;
 

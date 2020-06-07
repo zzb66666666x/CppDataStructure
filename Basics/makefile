@@ -1,26 +1,29 @@
-objects = main.o functions.o
-files = main.cpp functions.h functions.cpp makefile template_class.h template_class.cpp\
-		array2d.h array2d.cpp
+DIR_OBJ = ./obj
+
+cpp_files = $(wildcard *.cpp)
+header_files = $(wildcard *.h)
+all_files = $(cpp_files) $(header_files) makefile 
+objects = $(patsubst %.cpp,  $(DIR_OBJ)/%.o, $(cpp_files))
+
 CC = g++
 FLAGS = -g -Wall
 
 all: test
 
 test: $(objects) 
-	$(CC) $(objects) $(FLAGS) -o test
+	$(CC) $(objects) $(FLAGS) -o $@
 	@echo make done
 
-main.o: main.cpp template_class.h template_class.cpp array2d.h array2d.cpp
-	$(CC) $(FLAGS) -c main.cpp
+$(DIR_OBJ)/%.o: %.cpp
+	$(CC) $(FLAGS) -c $< -o $@ 
 
-functions.o: functions.cpp functions.h
-	$(CC) $(FLAGS) -c functions.cpp
-
+.PHONY: clean
 clean:
-	del test.exe $(objects)
+	@rm *.exe
+	@rm $(objects)
 	@echo clean done
 
 upload:
-	git add $(files)
+	git add $(all_files)
 	git commit -m"updated"
 	git push -u origin master

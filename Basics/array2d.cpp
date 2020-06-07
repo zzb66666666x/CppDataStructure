@@ -1,4 +1,5 @@
 #include<iostream>
+#include"array2d.h"
 
 using namespace std;
 

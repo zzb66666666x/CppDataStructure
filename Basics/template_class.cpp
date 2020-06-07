@@ -1,5 +1,6 @@
 #include<math.h>
 #include<iostream>
+#include"template_class.h"
 
 using namespace std;
 
