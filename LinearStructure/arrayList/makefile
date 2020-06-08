@@ -5,12 +5,12 @@ FLAGS = -g -Wall
 all: test
 
 test: $(objects)
-	$(CC) $(FLAGS) $(objects)
+	$(CC) $(FLAGS) $(objects) -o test
 	@echo make done
 
 main.o: main.cpp arrayList.cpp arrayList.h
 	$(CC) $(FLAGS) -c main.cpp
 
 clean:
-	del test $(objects)
+	@rm test $(objects)
 	@echo clean done
